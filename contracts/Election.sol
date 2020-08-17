@@ -16,10 +16,6 @@ contract Election {
     // Store Candidates Count
     uint public candidatesCount;
 
-    event votedEvent (
-        uint indexed _candidateId
-    );
-
     constructor () public {
         addCandidate("Donald J Trump");
         addCandidate("Joe Biden");
@@ -42,8 +38,6 @@ contract Election {
         // update candidate vote Count
         candidates[_candidateId].voteCount ++;
 
-        // trigger voted event
-        emit votedEvent(_candidateId);
     }
 
 }
